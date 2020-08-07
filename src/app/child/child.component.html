@@ -1,0 +1,24 @@
+<div class="table-responsive">
+    <table class="table row justify-content-center">
+        <tr>
+            <td class="row d-inline justify-content-start" [ngClass] = "{'markMe': task.strike}">
+                <strong>{{ task.task }}</strong>
+            </td>
+
+            <td *ngIf = "!task.strike">
+                <button class = "strike btn btn-outline-success btn-sm" (click) = "markAsComplete(taskId)">Mark as Done</button>
+            </td>
+
+            <td>
+                <button class = "btn btn-outline-danger btn-sm" (click) = "deleteTask(taskId)">Delete</button>
+            </td>
+
+            <td *ngIf = "!task.strike">
+                <form class="md-form">
+                    <input class="update" placeholder = "Update Task" #edit>
+                    <button class="ml-2 mb-1 btn btn-outline-dark btn-sm" (click) = "editTask(edit.value, taskId); edit.value=''">Edit Task</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+</div>

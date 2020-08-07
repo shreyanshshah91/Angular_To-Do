@@ -1,0 +1,14 @@
+<div class="mt-5 mb-5 container">
+    <h2 class="text-center display-4">ToDo List</h2>
+    <form class="mt-5 row justify-content-center" #flush>
+        <div class="form-group text-center">
+            <input class="w-50 tab" placeholder="Add Task" #taskFetch>
+            <button class="ml-4 btn btn-dark" (click) = "addTask(taskFetch.value); flush.reset()">Add Task</button>
+        </div>
+    </form>
+</div>
+
+<app-child *ngFor = "let task of tasks; let taskId = index"
+    [task] = "task"
+    [taskId] = "taskId">
+</app-child>

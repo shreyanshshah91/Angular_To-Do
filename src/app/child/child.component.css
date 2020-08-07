@@ -1,0 +1,9 @@
+.markMe{
+    text-decoration:line-through;
+}
+
+.update{
+    border: none;
+    border-bottom: 1px solid gray;
+    font-family: "Bitstream Vera Sans Mono";
+}
